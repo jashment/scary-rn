@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "scary-rn",
+    "slug": "scary-rn",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "scary-rn"
+}
