@@ -2,6 +2,7 @@ import React from 'react'
 import { View } from 'react-native';
 import { Header } from 'react-native-elements'
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 const Head = () =>
     <SafeAreaView>
         <View>
