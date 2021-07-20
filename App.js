@@ -1,25 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
-import Head from './components/navigation/Header'
+// import Head from './components/navigation/Header'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import NavigationDrawer from './components/navigation/Drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import Monsters from './components/Monsters/Monsters'
+import Home from './components/Home/Home'
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
 const Drawer = createDrawerNavigator()
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <NavigationDrawer>
-        <View style={styles.container}>
-          <Head/>
+    <SafeAreaProvider style={styles.container}>
+      {/* <NavigationDrawer> */}
+        {/* <View style={styles.container}> */}
+          {/* <Head/> */}
           <ImageBackground source={require('./assets/moon.jpg')} resizeMode={'cover'} style={styles.backgroundImage}>
-            <Text style={styles.text}>Open up App.js to start working on your app!</Text>
-            <StatusBar style="auto" />
+            <NavigationContainer>
+              <Drawer.Navigator initialRouteName="Home">
+                <Drawer.Screen name="Home" component={Home} />
+                <Drawer.Screen name="Monsters" component={Monsters} />
+              </Drawer.Navigator>
+            </NavigationContainer>
           </ImageBackground>
-        </View>
-      </NavigationDrawer>
+        {/* </View> */}
+      {/* </NavigationDrawer> */}
     </SafeAreaProvider>
   );
 }
