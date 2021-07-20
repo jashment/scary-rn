@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageBackground, Text, View } from 'react-native'
+import { ImageBackground, Button, View } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import styles from '../../styles/mainStyles'
 
@@ -9,7 +9,7 @@ const Home = () => {
         <SafeAreaProvider>
             <View style={styles.container}>
                 <ImageBackground source={require('../../assets/moon.jpg')} resizeMode={'cover'} style={styles.backgroundImage}>
-                    <Text style={styles.text}>Home</Text>
+                    <Button style={styles.text} title="Home">Home</Button>
                 </ImageBackground>
             </View>
         </SafeAreaProvider>
