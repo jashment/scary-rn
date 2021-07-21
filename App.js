@@ -15,7 +15,7 @@ export default function App() {
     <SafeAreaProvider style={styles.container}>
       
       <NavigationContainer>
-        <Tab.Navigator initialRouteName="Head">
+        <Tab.Navigator initialRouteName="Home">
           <Tab.Screen name="Home" component={Home} options={{tabBarIcon: () => <Ionicons name="home" size={24} color="black" />}} />
           <Tab.Screen name="Monsters" component={Monsters} options={{tabBarIcon: () => <MaterialCommunityIcons name="emoticon-devil" size={24} color="black" />}} />
         </Tab.Navigator>

@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     // margin: 'auto',
+  },
+  tab: {
+    backgroundColor: '#a03c00'
   }
 });
 
