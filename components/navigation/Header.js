@@ -9,13 +9,13 @@ import Monsters from '../Monsters/Monsters'
 
 const Drawer = createDrawerNavigator();
 
-const Head = () =>
+const Head = ({navigation: {toggleDrawer}}) =>
     <SafeAreaView>
         <View>
             <Header
                 style={{ borderBottomColor: '#2c2b30' }}
                 backgroundColor='#2c2b30'
-                leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' }, onPress: () => navigation.toggleDrawer() }}
+                leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' }, onPress: () => toggleDrawer()}}
                 centerComponent={{ text: 'Scary App', style: { color: '#fff' } }}
                 rightComponent={{ icon: 'home', color: '#fff' }}
             />
