@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
     color: 'white',
     // margin: 'auto',
   },
-  tab: {
-    backgroundColor: '#a03c00'
+  btn: {
+    alignSelf: 'flex-start'
   }
 });
 
