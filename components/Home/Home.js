@@ -8,8 +8,11 @@ const Home = ({navigation}) => {
     return (
         <SafeAreaProvider>
             <View style={styles.container}>
+                {/* <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap' }}></View> */}
                 <ImageBackground source={require('../../assets/moon.jpg')} resizeMode={'cover'} style={styles.backgroundImage}>
-                    <Button style={styles.btn} title="Monsters" onPress={() => navigation.navigate('Monsters')}>Home</Button>
+                    <View style={{flex: 1, padding: 100}}>
+                        <Button style={styles.btn} title="Monsters" onPress={() => navigation.navigate('Monsters')}>Home</Button>
+                    </View>
                 </ImageBackground>
             </View>
         </SafeAreaProvider>
