@@ -1,17 +1,21 @@
 import React from 'react'
 import { ImageBackground, Image, FlatList, Text, View } from 'react-native'
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {Card} from 'react-native-elements'
 import styles from '../../styles/mainStyles'
 
 
 const Monsters = () => {
     return (
-        <SafeAreaProvider>
+        <SafeAreaView style={styles.container}>
+            <ImageBackground source={require('../../assets/cat.jpg')} resizeMode={'cover'} style={styles.backgroundImage}>
             <View style={styles.container}>
-                <ImageBackground source={require('../../assets/cat.jpg')} resizeMode={'cover'} style={styles.backgroundImage}>
-                    <View style={{ position: 'absolute', bottom: 20, width: '100%', height: '50%' }}>
-                        <FlatList
+                
+                    {/* <View> */}
+                    <FlatList
+                            style={{ flex: 1 }}
+                            inverted
+                            // keyExtriactor={(time, index) => index.toString()}
                             data={[
                                 {
                                     key: 'wolf',
@@ -24,24 +28,34 @@ const Monsters = () => {
                                 {
                                     key: 'dragon',
                                     uri: 'https://images.pexels.com/photos/6394135/pexels-photo-6394135.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+                                },
+                                {
+                                    key: 'vampire',
+                                    uri: 'https://images.pexels.com/photos/6394135/pexels-photo-6394135.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
                                 }
                             ]}
                             renderItem={(item) => {
                                 return (
-                                    <Card style={{height: '200px'}}>
-                                        <Text>{item.key}</Text>
-                                        {/* <Image source={{uri: item.uri}} style={{ alignSelf: 'center', width: '100%', height: '100%' }}/> */}
-                                    </Card>
+                                    <View>
+                                        <View style={styles.container}>
+                                    <Card style={{height: '500px'}}>
+                                        <Text style={{
+                                            paddingVertical: 10,
+                                            fontSize: 15,
+                                            paddingStart: 5,
+                                            paddingEnd: 16,
+                                            color: 'black'
+                                        }}>{item.key}</Text>
+                                            </Card>
+                                            </View>
+                                    </View>
                                 )}}
                         />
-                        {/* <Card>
-                            <Image source={{uri: 'https://images.pexels.com/photos/6394135/pexels-photo-6394135.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'}} style={{ alignSelf: 'center', width: '100%', height: '100%' }}/>
-                            <Text>Monsters</Text>
-                        </Card> */}
-                    </View>
-                </ImageBackground>
+                    {/* </View> */}
+                
             </View>
-        </SafeAreaProvider>
+            </ImageBackground>
+        </SafeAreaView>
     )
 }
 
