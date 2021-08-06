@@ -12,8 +12,7 @@ const Monsters = () => {
     const getMonstersFromDatabase = async () => {
         try {
             const result = await getAllMonsters()
-            console.log(result)
-            setMonsters(result)
+            await setMonsters(result)
         } catch (error) {
             console.log(error)
         }
@@ -41,7 +40,7 @@ const Monsters = () => {
                                                     paddingEnd: 16,
                                                     color: 'black'
                                                 }}>{item.name}</Text>
-                                                <Image source={{uri: item.uri}} style={{height: 300, width: 300}}/>
+                                                <Image source={{uri: item.url }} style={{height: 300, width: 300}}/>
                                             </Card>
                                         </View>
                                 )}}

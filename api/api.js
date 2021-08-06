@@ -1,17 +1,17 @@
-const { createClient } = require('@supabase/supabase-js')
-import { SUPABASE_URL, ANON_KEY, SUPABASE_TABLE } from '@env'
-
-const supabase = createClient(SUPABASE_URL, ANON_KEY)
+import { BACKEND_URL } from '@env'
+import axios from 'axios'
 
 export const getAllMonsters = async () => {
-const { data, error } = await supabase
-    .from(SUPABASE_TABLE)
-    .select()
-    
-    if (error) {
+    try {
+        const result = await axios({
+            method: 'GET',
+            url: `${BACKEND_URL}/monsters/all`
+        })
+        console.log(result)
+        return result.data
+    } catch (error) {
         console.log(error)
-    } else {
-        res.send(data)
     }
+
 }
 
