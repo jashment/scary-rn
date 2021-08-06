@@ -3,7 +3,7 @@ import { ImageBackground, Image, FlatList, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {Card} from 'react-native-elements'
 import styles from '../../styles/mainStyles'
-import {getAllMonsters} from '../../api/api'
+import { getAllMonsters } from '../../api/api'
 
 
 const Monsters = () => {
@@ -25,22 +25,16 @@ const Monsters = () => {
     return (
         <SafeAreaView style={styles.container}>
             <ImageBackground source={require('../../assets/cat.jpg')} resizeMode={'cover'} style={styles.backgroundImage}>
-            <View style={styles.container}>
+            <View>
                     <FlatList
-                            inverted
                             data={monsters}
                             renderItem = {({item}) => {
                                 return (
                                         <View>
                                             <Card style={{height: '500px'}}>
-                                                <Text style={{
-                                                    paddingVertical: 10,
-                                                    fontSize: 15,
-                                                    paddingStart: 5,
-                                                    paddingEnd: 16,
-                                                    color: 'black'
-                                                }}>{item.name}</Text>
-                                                <Image source={{uri: item.url }} style={{height: 300, width: 300}}/>
+                                                <Text style={{fontFamily: 'Rye_400Regular', fontSize: 32}}>{item.name}</Text>
+                                                <Image source={{ uri: item.url }} style={{ height: 300, width: 300 }} />
+                                                <Text>{ item.description }</Text>
                                             </Card>
                                         </View>
                                 )}}
