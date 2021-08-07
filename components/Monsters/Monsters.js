@@ -4,10 +4,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import {Card} from 'react-native-elements'
 import styles from '../../styles/mainStyles'
 import { getAllMonsters } from '../../api/api'
+import { useFonts, Rye_400Regular } from '@expo-google-fonts/rye';
 
 
 const Monsters = () => {
     const [monsters, setMonsters] = useState()
+
+    useFonts({
+        Rye_400Regular,
+    });
 
     const getMonstersFromDatabase = async () => {
         try {
@@ -23,25 +28,29 @@ const Monsters = () => {
     }, [])
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
+            
             <ImageBackground source={require('../../assets/cat.jpg')} resizeMode={'cover'} style={styles.backgroundImage}>
-            <View>
+                {/* <View style={{paddingTop: 100}}> */}
                     <FlatList
-                            data={monsters}
-                            renderItem = {({item}) => {
-                                return (
-                                        <View>
-                                            <Card style={{height: '500px'}}>
-                                                <Text style={{fontFamily: 'Rye_400Regular', fontSize: 32}}>{item.name}</Text>
-                                                <Image source={{ uri: item.url }} style={{ height: 300, width: 300 }} />
-                                                <Text>{ item.description }</Text>
-                                            </Card>
-                                        </View>
-                                )}}
-                        />
-            </View>
+                        data={monsters}
+                        keyExtractor = {item => item.id}
+                        renderItem = {({item}) => 
+                            (
+                                    // <View>
+                                        <Card containerStyle={{backgroundColor: 'rgba(128, 128, 128, 0.3)', borderColor: 'rgba(128, 128, 128, 0.3)', justifyContent: 'center'}} wrapperStyle={{alignItems: 'center'}}>
+                                            <Card.Title style={{ fontFamily: 'Rye_400Regular', fontSize: 32, color: 'rgba(255, 255, 255, 1)'}}>{item.name}</Card.Title>
+                                            <Card.Image source={{ uri: item.url }} style={{ height: 300, width: 300, borderRadius: 100 }} />
+                                            <Card.Divider/>
+                                            <Text style={{color: 'rgba(255, 255, 255, 1)'}}>{item.description}</Text>
+                                        </Card>
+                                    // </View>
+                            )}
+                    />
+                {/* </View> */}
             </ImageBackground>
-        </SafeAreaView>
+            
+        </View>
     )
 }
 
