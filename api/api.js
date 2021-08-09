@@ -1,15 +1,14 @@
-import { BACKEND_URL } from '@env'
-import axios from 'axios'
+import { REACT_APP_BACKEND_URL } from '@env'
+import { axiosInstance } from './axiosInstance'
+import { Platform } from 'react-native'
 
 export const getAllMonsters = async () => {
     try {
-        const result = await axios({
-            method: 'GET',
-            url: `${BACKEND_URL}/monsters/all`
-        })
-        console.log(result)
+        const result = await axiosInstance.get('/monsters/all', {data: undefined})
+        // console.log(result)
         return result.data
     } catch (error) {
+        // console.log('Also here')
         console.log(error)
     }
 
