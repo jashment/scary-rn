@@ -16,6 +16,7 @@ const chooseUrl = () => {
     } else {
         backendUrl = REACT_APP_BACKEND_URL
     }
+    console.log(backendUrl)
     return backendUrl
 }
 
