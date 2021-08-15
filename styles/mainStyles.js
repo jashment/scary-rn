@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     // margin: 'auto',
   },
   btn: {
+    // backgroundColor: 'red'
     // alignSelf: 'flex-start'
     // flex: 1,
     // justifyContent: 'flex-start'

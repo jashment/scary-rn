@@ -5,7 +5,6 @@ import { Platform } from 'react-native'
 
 const chooseUrl = () => {
     let backendUrl
-    console.log('here')
     if (Platform.OS === 'android') {
         backendUrl = 'http://10.0.2.2:3000'
     } else if (Platform.OS === 'ios') {
@@ -13,7 +12,6 @@ const chooseUrl = () => {
     } else if (Platform.OS === 'web') {
         backendUrl = 'http://localhost:3000'
     }
-    console.log(backendUrl)
     return backendUrl
 }
 

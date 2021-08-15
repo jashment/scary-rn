@@ -14,7 +14,7 @@ export default function App() {
     <SafeAreaProvider style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={Home} options={{headerTransparent: true, headerTitleAlign: 'center', headerStyle: {height: 75}, headerTitleStyle: {color: 'white'}}} />
+          <Stack.Screen name="Home" component={Home} options={{ headerTransparent: true, headerTitleAlign: 'center', headerStyle: {height: 75}, headerTitleStyle: {color: 'white'}}} />
           <Stack.Screen name="Monsters" component={Monsters} options={{headerTransparent: true, headerTitleAlign: 'center', headerStyle: {height: 75}, headerTitleStyle: {color: 'white'}}} />
         </Stack.Navigator>
       </NavigationContainer>

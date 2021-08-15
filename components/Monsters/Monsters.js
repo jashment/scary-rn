@@ -28,7 +28,6 @@ const Monsters = () => {
 
     return (
         <View style={styles.container}>
-            
             <ImageBackground source={require('../../assets/cat.jpg')} resizeMode={'cover'} style={styles.backgroundImage}>
                 <View style={{ paddingTop: 100 }}>
                     <FlatList
@@ -36,14 +35,12 @@ const Monsters = () => {
                         keyExtractor = {key => key.id}
                         renderItem = {({item}) => 
                             (
-                                // <View>
-                                    <Card containerStyle={{backgroundColor: 'rgba(128, 128, 128, 0.3)', borderColor: 'rgba(128, 128, 128, 0.3)', justifyContent: 'center'}} wrapperStyle={{alignItems: 'center'}}>
-                                        <Card.Title style={{ fontFamily: 'Rye_400Regular', fontSize: 32, color: 'rgba(255, 255, 255, 1)'}}>{item.name}</Card.Title>
-                                        <Card.Image source={{ uri: item.url }} style={{ height: 300, width: 300, borderRadius: 100 }} />
-                                        <Card.Divider/>
-                                        <Text style={{color: 'rgba(255, 255, 255, 1)'}}>{item.description}</Text>
-                                    </Card>
-                                // </View>
+                                <Card containerStyle={{backgroundColor: 'rgba(128, 128, 128, 0.3)', borderColor: 'rgba(128, 128, 128, 0.3)', justifyContent: 'center'}} wrapperStyle={{alignItems: 'center'}}>
+                                    <Card.Title style={{ fontFamily: 'Rye_400Regular', fontSize: 32, color: 'rgba(255, 255, 255, 1)'}}>{item.name}</Card.Title>
+                                    <Card.Image source={{ uri: item.url }} style={{ height: 300, width: 300, borderRadius: 100 }} />
+                                    <Card.Divider/>
+                                    <Text style={{color: 'rgba(255, 255, 255, 1)'}}>{item.description}</Text>
+                                </Card>
                             )}
                     />
                 </View>
