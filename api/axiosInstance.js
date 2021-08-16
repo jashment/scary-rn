@@ -13,10 +13,8 @@ const chooseUrl = () => {
         } else if (Platform.OS === 'web') {
             backendUrl = 'http://localhost:3000'
         }
-    } else if (NODE_ENV === 'production') {
-        backendUrl = REACT_APP_BACKEND_URL
     }
-    console.log(backendUrl)
+    console.log(NODE_ENV)
     return backendUrl
 }
 
