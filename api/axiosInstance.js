@@ -5,6 +5,7 @@ import { Platform } from 'react-native'
 
 const chooseUrl = () => {
     let backendUrl
+    console.log(REACT_APP_BACKEND_URL)
     if (NODE_ENV === 'production') {
         return REACT_APP_BACKEND_URL
     } else if (NODE_ENV === 'development') {
@@ -16,8 +17,8 @@ const chooseUrl = () => {
         } else if (Platform.OS === 'web') {
             backendUrl = 'http://localhost:3000'
         }
+        return backendUrl
     }
-    return backendUrl
 }
 
 export const axiosInstance = axios.create({
