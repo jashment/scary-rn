@@ -5,12 +5,9 @@ import { Platform } from 'react-native'
 
 const chooseUrl = () => {
     let backendUrl
-    console.log(REACT_APP_BACKEND_URL)
     if (NODE_ENV === 'production') {
-        console.log('prod')
         return REACT_APP_BACKEND_URL
     } else if (NODE_ENV === 'development') {
-        console.log('dev')
         if (Platform.OS === 'android') {
             backendUrl = 'http://10.0.2.2:3000'
         } else if (Platform.OS === 'ios') {
