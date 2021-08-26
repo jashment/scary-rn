@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
   },
+  btn: {
+    paddingBottom: 100
+  }
 });
 
 export default styles

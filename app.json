@@ -1,11 +1,20 @@
 {
   "expo": {
-    "name": "scary-rn",
-    "slug": "scary-rn",
+    "name": "Tome of Terror",
+    "slug": "tome-of-terror",
+    "icon": "assets/ghost_skull.png",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
   },
-  "name": "scary-rn"
+  "name": "Tome of Terror",
+  "ios": {
+    "bundleIdentifier": "com.jashment.tomeofterror",
+    "buildNumber": "1.0.0"
+  },
+  "android": {
+    "package": "com.jashment.tomeofterror",
+    "versionCode": 1
+  }
 }
